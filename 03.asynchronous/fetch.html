@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>fetch</title>
+  </head>
+  <body>
+    <script>
+      const url = "https://bootcamp.fjord.jp/";
+      async function fetch_top_page() {
+        let response = await fetch(url);
+        if (response.ok) {
+          let responseText = await response.text();
+          console.log(responseText);
+        } else {
+          console.error(`fetch Error: ${response.status}`);
+        }
+      }
+      fetch_top_page();
+    </script>
+  </body>
+</html>
